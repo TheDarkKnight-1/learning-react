@@ -3,28 +3,32 @@ import './App.css';
 import Header from "./MyComponents/Header"
 import ToDos from "./MyComponents/ToDos"
 import Footer from "./MyComponents/Footer"
+import React, { useState } from 'react';
 
 function App() {
-    const onDelete=()=>{
-        console.log("I am on Delete");
+    const onDelete=(para)=>{
+        console.log("I am on Delete",para);
+        setTodos(items.filter((e)=>{
+            return e!==para;
+        }))
     }
-  let items=[
+    const [items,setTodos]=useState([
       {
           slno:1,
           title:"Go for a walk",
           desc:"I need to go for a walk at 5:00 pm"
       },
       {
-          slno:1,
+          slno:2,
           title:"Have Food",
           desc:"I need to have food at 8:00 pm"
       },
       {
-          slno:1,
+          slno:3,
           title:"Study",
           desc:"I need to study at 9:00 pm"
       }
-  ]
+  ])
   return (
    <>
   <Header title="ToDO" searchBar={true}/>

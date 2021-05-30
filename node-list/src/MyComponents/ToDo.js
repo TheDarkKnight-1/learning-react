@@ -5,7 +5,7 @@ export default function ToDo({todo,onDelete}) {
         <div>
             <h4>{todo.title}</h4>
             <p>{todo.desc}</p>
-            <Button variant="danger" size="sm" onClick={onDelete}>Delete</Button>{' '}
+            <Button variant="danger" size="sm" onClick={()=>{onDelete(todo)}}>Delete</Button>{' '}
         </div>
     )
 }
