@@ -3,6 +3,7 @@ import './App.css';
 import Header from "./MyComponents/Header"
 import ToDos from "./MyComponents/ToDos"
 import Footer from "./MyComponents/Footer"
+import AddTodos from "./MyComponents/AddTodos"
 import React, { useState } from 'react';
 
 function App() {
@@ -27,11 +28,17 @@ function App() {
           slno:3,
           title:"Study",
           desc:"I need to study at 9:00 pm"
+      },
+      {
+          slno:4,
+          title:"Study",
+          desc:"I need to study at 9:00 pm"
       }
   ])
   return (
    <>
   <Header title="ToDO" searchBar={true}/>
+  <AddTodos/>
   <ToDos items={items} onDelete={onDelete}/>
   <Footer/>
   </>
